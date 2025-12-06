@@ -61,11 +61,9 @@ where
         let token = match auth_header {
             Some(header) => {
                 let header_str = header.to_str().unwrap_or("");
-                if header_str.starts_with("Bearer ") {
-                    Some(header_str[7..].to_string())
-                } else {
-                    None
-                }
+                header_str
+                    .strip_prefix("Bearer ")
+                    .map(|stripped| stripped.to_string())
             }
             None => None,
         };
