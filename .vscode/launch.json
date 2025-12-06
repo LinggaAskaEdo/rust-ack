@@ -1,0 +1,100 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Rust REST API",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust-ack",
+                    "--package=rust-ack"
+                ],
+                "filter": {
+                    "name": "rust-ack",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "DATABASE_URL": "postgres://postgres:a5k4CooL@localhost:5432/postgres",
+                "REDIS_URL": "redis://localhost:6379",
+                "JWT_SECRET": "your-secret-key-change-in-production",
+                "LOG_LEVEL": "debug",
+                "LOG_FORMAT": "pretty",
+                "RUST_LOG": "debug",
+                "RUST_BACKTRACE": "1"
+            },
+            "preLaunchTask": "cargo build"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Rust API (Release)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--release",
+                    "--bin=rust-ack",
+                    "--package=rust-ack"
+                ],
+                "filter": {
+                    "name": "rust-ack",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Unit Tests",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=rust-ack"
+                ],
+                "filter": {
+                    "name": "rust-ack",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Integration Tests",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=*",
+                    "--package=rust-ack"
+                ]
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Current Test",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "${fileBasenameNoExtension}"
+                ]
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

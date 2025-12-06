@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cargo",
+            "command": "build",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "cargo build"
+        },
+        {
+            "type": "cargo",
+            "command": "run",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "label": "cargo run"
+        },
+        {
+            "type": "cargo",
+            "command": "test",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "label": "cargo test"
+        },
+        {
+            "type": "cargo",
+            "command": "clean",
+            "problemMatcher": [],
+            "label": "cargo clean"
+        },
+        {
+            "type": "shell",
+            "command": "docker-compose up -d",
+            "label": "Start Docker Services",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "command": "docker-compose down",
+            "label": "Stop Docker Services",
+            "problemMatcher": []
+        }
+    ]
+}
