@@ -1,0 +1,25 @@
+{
+    "rust-analyzer.cargo.features": "all",
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.check.allTargets": true,
+    "rust-analyzer.checkOnSave": true,
+    "rust-analyzer.inlayHints.enable": true,
+    "rust-analyzer.inlayHints.chainingHints": true,
+    "rust-analyzer.inlayHints.parameterHints": true,
+    "rust-analyzer.lens.enable": true,
+    "rust-analyzer.lens.run": true,
+    "rust-analyzer.lens.debug": true,
+    "rust-analyzer.hover.actions.enable": true,
+    "rust-analyzer.hover.actions.references": true,
+    "rust-analyzer.hover.actions.run": true,
+    "rust-analyzer.hover.actions.debug": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "files.watcherExclude": {
+        "**/target/**": true
+    }
+}
