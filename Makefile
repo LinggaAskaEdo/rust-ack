@@ -17,7 +17,7 @@ format:
 	cargo check
 
 .PHONY: all
-all: format build
+all: update clean format build
 	cargo run
 
 .PHONY: watch
